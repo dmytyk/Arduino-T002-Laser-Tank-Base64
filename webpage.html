@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Remote Control</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: #E5E5FF;
+        }
+        p {
+            font-family: Arial, sans-serif;
+        }
+        div.forwardbutton {
+            position: absolute;
+            top: 10px;
+            left: 130px;
+        }
+        div.reversebutton {
+            position: absolute;
+            top: 50px;
+            left: 130px;
+        }
+        div.speedupbutton {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+        }
+        div.slowdownbutton {
+            position: absolute;
+            top: 30px;
+            left: 250px;
+        }
+        div.mfordbutton {
+            position: absolute;
+            top: 90px;
+            left: 10px;
+        }
+        div.stopbutton {
+            position: absolute;
+            top: 90px;
+            left: 130px;
+        }
+        div.mrevbutton {
+            position: absolute;
+            top: 90px;
+            left: 250px;
+        }
+        div.leftbutton {
+            position: absolute;
+            top: 30px;
+            left: 460px;
+        }
+        div.rightbutton {
+            position: absolute;
+            top: 30px;
+            left: 580px;
+        }
+        div.mlefbutton {
+            position: absolute;
+            top: 90px;
+            left: 400px;
+        }
+        div.straightbutton {
+            position: absolute;
+            top: 90px;
+            left: 520px;
+        }
+        div.mrigthbutton {
+            position: absolute;
+            top: 90px;
+            left: 640px;
+        }
+        div.targetbutton {
+            position: absolute;
+            top: 150px;
+            left: 10px;
+        }
+        div.laserleftbutton {
+            position: absolute;
+            top: 150px;
+            left: 115px;
+        }
+        div.laserrightbutton {
+            position: absolute;
+            top: 150px;
+            left: 225px;
+        }
+        div.laserupbutton {
+            position: absolute;
+            top: 150px;
+            left: 335px;
+        }
+        div.laserdnbutton {
+            position: absolute;
+            top: 150px;
+            left: 445px;
+        }
+        div.firebutton {
+            position: absolute;
+            top: 150px;
+            left: 555px;
+        }
+        div.batterybutton {
+             position: absolute;
+             top: 134px;
+             left: 662px;
+        }
+        div.configure {
+            position: absolute;
+            top: 195px;
+            left: 15px;
+        }
+        div.statusinfo {
+            position: absolute;
+            top: 425px;
+            left: 12px;
+        }
+        .movebutton {
+            border: solid;
+            background-color: #73AD21;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .targetbuttonoff {
+            border: solid;
+            background-color: Black;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .targetbuttonon {
+            border: solid;
+            background-color: Purple;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .firebuttonoff {
+            border: solid;
+            background-color: Black;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .firebuttonon {
+            border: solid;
+            background-color: Red;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .laserbuttonoff {
+            border: solid;
+            background-color: Black;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .laserbuttonon {
+            border: solid;
+            background-color: Orange;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .statusbutton {
+            border: solid;
+            background-color: Blue;
+            color: white;
+            padding: 5px 5px;
+            width: 100px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .commandbutton {
+            border: solid;
+            background-color: Orange;
+            color: black;
+            padding: 2px 2px;
+            width: 80px;
+            font-size: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="buttons" class="buttons">
+    <div id="forwardbutton" class="forwardbutton">
+        <button type="button" name="1" class="movebutton" onclick="sendcommand(event, name)">> Forward ></button>
+    </div>
+    <div id="reversebutton" class="reversebutton">
+        <button type="button" name="2" class="movebutton" onclick="sendcommand(event, name)">< Reverse <</button>
+    </div>
+    <div id="speedupbutton" class="speedupbutton">
+        <button type="button" name="20" class="movebutton" onclick="sendcommand(event, name)">+ SpeedUp +</button>
+    </div>
+    <div id="slowdownbutton" class="slowdownbutton">
+        <button type="button" name="21" class="movebutton" onclick="sendcommand(event, name)">- SlowDown -</button>
+    </div>
+    <div id="mfordbutton" class="mfordbutton">
+        <button type="button" name="3" class="movebutton" onclick="sendcommand(event, name)">>> MaxF >></button>
+    </div>
+    <div id="stopbutton" class="stopbutton">
+        <button type="button" name="4" class="movebutton" onclick="sendcommand(event, name)">Stop</button>
+    </div>
+    <div id="mrevbutton" class="mrevbutton">
+        <button type="button" name="5" class="movebutton" onclick="sendcommand(event, name)"><< MaxR <<</button>
+    </div>
+
+    <div id="leftbutton" class="leftbutton">
+        <button type="button" name="6" class="movebutton" onclick="sendcommand(event, name)">Left</button>
+    </div>
+    <div id="rightbutton" class="rightbutton">
+        <button type="button" name="7" class="movebutton" onclick="sendcommand(event, name)">Right</button>
+    </div>
+    <div id="mlefbutton" class="mlefbutton">
+        <button type="button" name="8" class="movebutton" onclick="sendcommand(event, name)">MLeft</button>
+    </div>
+    <div id="straightbutton" class="straightbutton">
+        <button type="button" name="9" class="movebutton" onclick="sendcommand(event, name)">Straight</button>
+    </div>
+    <div id="mrigthbutton" class="mrigthbutton">
+        <button type="button" name="10" class="movebutton" onclick="sendcommand(event, name)">MRight</button>
+    </div>
+
+    <div id="targetbutton" class="targetbutton">
+        <button type="button" name="11" class="targetbuttonoff" onclick="sendcommand(event, name)">Targeting</button>
+    </div>
+    <div id="laserleftbutton" class="laserleftbutton">
+        <button type="button" name="12" id="12" class="laserbuttonoff" onclick="sendcommand(event, name)">Laser Left</button>
+    </div>
+    <div id="laserrightbutton" class="laserrightbutton">
+        <button type="button" name="13" id="13" class="laserbuttonoff" onclick="sendcommand(event, name)">Laser Right</button>
+    </div>
+    <div id="laserupbutton" class="laserupbutton">
+        <button type="button" name="14" id="14" class="laserbuttonoff" onclick="sendcommand(event, name)">Laser Up</button>
+    </div>
+    <div id="laserdnbutton" class="laserdnbutton">
+        <button type="button" name="15" id="15" class="laserbuttonoff" onclick="sendcommand(event, name)">Laser Down</button>
+    </div>
+    <div id="firebutton" class="firebutton">
+        <button type="button" name="16" class="firebuttonoff" onclick="sendcommand(event, name)">Fire</button>
+    </div>
+    <div id="batterybutton" class="batterybutton">
+        <p><button type="button" name="18" class="statusbutton" onclick="sendcommand(event, name)">- Battery +</button></p>
+    </div>
+</div>
+
+<div class="configure">
+    <table style="background-color: #ffffff; border:2px black solid;">
+        <tr>
+            <td colspan="2" align="center" style="border:1px black solid;"><b>Tank Configuration & Control</b></td>
+        </tr>
+        <tr>
+            <td>Primary Command:</td>
+            <td><input type="text" id="primary" name="primary" size="30">&nbsp;<button type="button" name="19" class="commandbutton" onclick="sendprimary(name)">Send</button></td>
+        </tr>
+        <tr>
+            <td>Secondary Command:</td>
+            <td><input type="text" id="secondary" name="secondary" size="30">&nbsp;<button type="button" name="17" class="commandbutton" onclick="sendsecondary(name)">Send</button></td>
+        </tr>
+        <tr>
+            <td>Button Option:</td>
+            <td><input type="text" id="buttonoption" name="buttonoption" size="30"> [Default is 1]</td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">Responses:</td>
+        </tr>
+        <tr>
+            <td colspan="3" ><textarea name="servermessages" id="servermessages" class="servermessages" rows="5" cols="98" readonly></textarea></td>
+        </tr>
+    </table>
+</div>
+
+<div class="statusinfo">
+    <table>
+        <tr valign="top">
+            <td>
+                <table style="background-color: #ffffff; border:2px black solid;">
+                    <tr>
+                        <td colspan="2" align="center" style="border:1px black solid;"><b>Tank Status</b></td>
+                    </tr>
+                    <tr>
+                        <td>Communication Link: </td><td id="SM_Communication"></td>
+                    </tr>
+                    <tr>
+                        <td>Battery Status: </td><td id="SM_Battery">0</td>
+                    </tr>
+                    <tr>
+                        <td>Secondary Processor: </td><td id="SM_Secondary">Not Connected</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table style="background-color: #ffffff; border:2px black solid;">
+                    <tr>
+                        <td colspan="3" align="center" style="border:1px black solid;"><b>Tank Settings</b></td>
+                    </tr>
+                    <tr>
+                        <td>Laser Power: </td><td id="SM_Laser">0 ms</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0 - 10000 : 0 - 10 seconds ]</td>
+                    </tr>
+                    <tr>
+                        <td>Motor Resolution: </td><td id="SM_Motors">50 inc</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 100 - 250 : 100 Min - 250 Max ]</td>
+                    </tr>
+                    <tr>
+                        <td>Laser Transition Speed: </td><td id="SM_LaserTS">10 ms</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 1 - 100 : 1 Fastest 100 Slowest ]</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var server = "ws://" + window.location.hostname + ":8080/";
+    var socket = null;
+    var messageTime;
+    var called = false;
+
+    function connectSocket() {
+        document.getElementById("SM_Communication").innerHTML = '<font color="red">Connecting</font>';
+
+        socket = new WebSocket(server);
+
+        socket.onopen = function() {
+            called = false;
+            document.getElementById("SM_Communication").innerHTML = '<font color="green">Connected</font>';
+        }
+
+        socket.onmessage = function(m) {
+            var sentData = m.data.split(":");
+            if (sentData[0] == "D") {
+                document.getElementById("servermessages").innerHTML += m.data + "\n";
+                document.getElementById("servermessages").scrollTop = document.getElementById("servermessages").scrollHeight;
+            } else if (sentData[0] == "E") {
+                document.getElementById("servermessages").innerHTML += m.data + "\n";
+                document.getElementById("servermessages").scrollTop = document.getElementById("servermessages").scrollHeight;
+            } else if (sentData[0] == "L") {
+                document.getElementById("SM_Laser").innerHTML = sentData[1];
+            } else if (sentData[0] == "M") {
+                document.getElementById("SM_Motors").innerHTML = sentData[1];
+            } else if (sentData[0] == "P") {
+                document.getElementById("SM_Secondary").innerHTML = sentData[1];
+            }  else if (sentData[0] == "R") {
+                document.getElementById("servermessages").innerHTML += m.data + "\n";
+                document.getElementById("servermessages").scrollTop = document.getElementById("servermessages").scrollHeight;
+            }  else if (sentData[0] == "S") {
+                document.getElementById("SM_Battery").innerHTML = sentData[1];
+            }  else if (sentData[0] == "T") {
+                document.getElementById("SM_LaserTS").innerHTML = sentData[1];
+            }
+        }
+
+        socket.onerror = function() {
+            socket.close();
+        }
+
+        socket.onclose = function() {
+            document.getElementById("SM_Communication").innerHTML = '<font color="orange">Disconnected</font>';
+            setTimeout(connectSocket, 1000);
+        }
+    }
+
+    connectSocket();
+
+    window.addEventListener("beforeunload", function() {
+        socket.onclose = function() {};
+        socket.close();
+    });
+
+    function sendcommand(e, name) {
+        // get the button option value
+        let buttonVal = document.getElementById("buttonoption").value;
+        document.getElementById("buttonoption").value = '';
+        if(buttonVal === false) {
+            buttonVal = 1;
+        }
+
+        try {
+            // send it to the tank
+            socket.send(name + ":" + buttonVal);
+
+            // do the button toggles
+            // toggle the target button
+            if(name == 11) {
+                if (e.target.className.trim() === 'targetbuttonoff') {
+                    e.target.className = 'targetbuttonon';
+                } else {
+                    e.target.className = 'targetbuttonoff';
+                }
+            }
+            // laser left
+            if(name == 12) {
+                if (e.target.className.trim() === 'laserbuttonoff') {
+                    e.target.className = 'laserbuttonon';
+                    document.getElementById('13').className = "laserbuttonoff";
+                } else {
+                    e.target.className = 'laserbuttonoff';
+                }
+            }
+            // laser right
+            if(name == 13) {
+                if (e.target.className.trim() === 'laserbuttonoff') {
+                    e.target.className = 'laserbuttonon';
+                    document.getElementById('12').className = "laserbuttonoff";
+                } else {
+                    e.target.className = 'laserbuttonoff';
+                }
+            }
+            // laser up
+            if(name == 14) {
+                if (e.target.className.trim() === 'laserbuttonoff') {
+                    e.target.className = 'laserbuttonon';
+                    document.getElementById('15').className = "laserbuttonoff";
+                } else {
+                    e.target.className = 'laserbuttonoff';
+                }
+            }
+            // laser down
+            if(name == 15) {
+                if (e.target.className.trim() === 'laserbuttonoff') {
+                    e.target.className = 'laserbuttonon';
+                    document.getElementById('14').className = "laserbuttonoff";
+                } else {
+                    e.target.className = 'laserbuttonoff';
+                }
+            }
+            // fire
+            if(name == 16) {
+                e.target.className = 'firebuttonon';
+                setInterval(function(){
+                    e.target.className = 'firebuttonoff';
+                }, 1000);
+            }
+        } catch (e) {
+            socket.onerror(e);
+        }
+    }
+
+    function sendprimary(name) {
+        try {
+            let primaryVal = document.getElementById("primary").value;
+            socket.send(name + ":" + primaryVal);
+            document.getElementById("primary").value = '';
+        } catch (e) {
+            socket.onerror(e);
+        }
+    }
+
+    function sendsecondary(name) {
+        try {
+            let secondaryVal = document.getElementById("secondary").value;
+            socket.send(name + ":" + secondaryVal);
+            document.getElementById("secondary").value = '';
+        } catch (e) {
+            socket.onerror(e);
+        }
+    }
+</script>
+</body>
+</html>
