@@ -342,7 +342,6 @@
 <script>
     var server = "ws://" + window.location.hostname + ":8080/";
     var socket = null;
-    var called = false;
 
     function connectSocket() {
         document.getElementById("SM_Communication").innerHTML = '<font color="red">Connecting</font>';
@@ -350,7 +349,6 @@
         socket = new WebSocket(server);
 
         socket.onopen = function() {
-            called = false;
             document.getElementById("SM_Communication").innerHTML = '<font color="green">Connected</font>';
         }
 
