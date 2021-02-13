@@ -60,7 +60,7 @@ The following steps walk you through the process of zipping, encoding, saving, s
 
 Once again this tutorial will not dive into the webpage or Arduino code workings, we will do that in future tutorials.
 
-[YouTube Walk Through](https://www.youtube.com/channel/UClwcP7ByE6Ia9DmKfP0C-UQ)
+[YouTube Walk Through](https://www.youtube.com/watch?v=Ghx8vUjAboc&list=PLVApLwWluBD52z7aNymyIb45_fcwuJ2Th&index=4)
 
 ## Next Up
 > - Tutorials on Software Interrupts, Background Processing, Board to Board communication, Pulse Simulation and other Fun Stuff
