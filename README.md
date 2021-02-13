@@ -35,7 +35,7 @@ The following steps walk you through the process of zipping, encoding, saving, s
 
 1. Download and install 7ZIP
 2. Connect the MKR1010 to your computer, create a folder (T002_LaserTankBase64) save the webpage.html, network_parameters.h and the T002_LaserTankBase64.ino files
-3. Ensure you change the ***MYHOME_SSID***, ***MYHOME_PASSWORD** to match your network and set the IPAaddress you want to use  
+3. Ensure you change the ***MYHOME_SSID***, ***MYHOME_PASSWORD*** to match your network and set the ***IPAaddress*** you want to use  
 4. Open the T002_LaserTankBase64 folder you created
 5. Right click on webpage.html, select 7-Zip, then Add Archive..., you should have a screen that looks like the one below.  The default parameters and file name are good for out example
 
@@ -59,6 +59,8 @@ The following steps walk you through the process of zipping, encoding, saving, s
 ![LT WebPage Image](/Images/LaserTankWebPage.JPG)
 
 Once again this tutorial will not dive into the webpage or Arduino code workings, we will do that in future tutorials.
+
+[YouTube Walk Through](https://www.youtube.com/channel/UClwcP7ByE6Ia9DmKfP0C-UQ)
 
 ## Next Up
 > - Tutorials on Software Interrupts, Background Processing, Board to Board communication, Pulse Simulation and other Fun Stuff
