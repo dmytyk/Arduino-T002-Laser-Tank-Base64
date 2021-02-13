@@ -58,7 +58,9 @@ The following steps walk you through the process of zipping, encoding, saving, s
 
 ![LT WebPage Image](/Images/LaserTankWebPage.JPG)
 
-Once again this tutorial will not dive into the webpage or Arduino code workings they are being provided to allow us to demonstrate using 7Zip and Base64 encoding, we will discuss the webpage and Arduino code in future tutorials.  Our goal was to show you to use 7Zip and Base64 encoding to reduce the size of your webpage and save valuable Arduino code space. 
+Once again this tutorial will not dive into the webpage or Arduino code workings they are being provided to allow us to demonstrate using 7Zip and Base64 encoding, we will discuss the webpage and Arduino code in future tutorials.  Our goal was to show you to use 7Zip and Base64 encoding to reduce the size of your webpage and save valuable Arduino code space.  You can watch this tutorial at:
+
+[T002 Laser Tank Base64 Web Page](https://www.youtube.com/watch?v=oKCXiYc311A&list=PLVApLwWluBD4ELsZ1-4vU5UWpnnuXdoNG&index=2)
 
 ## Next Up
 > - Tutorials on Software Interrupts, Background Processing, Board to Board communication, Pulse Simulation and other Fun Stuff
